@@ -1,16 +1,16 @@
 import sys
 
-def mergeSort(A):
+def mergeSort(A: list) -> list:
     mergeSort2(A, 0, len(A) - 1)
 
-def mergeSort2(A, first, last):
+def mergeSort2(A: list, first: int, last: int) -> None:
     if first < last:
         middle = (first + last) // 2
         mergeSort2(A, first, middle)
         mergeSort2(A, middle + 1, last)
         merge(A, first, middle, last)
 
-def merge(A, first, middle, last):
+def merge(A: list, first: int, middle: int, last: int) -> None:
     L = A[first:middle + 1]
     R = A[middle + 1:last + 1]
     L.append(sys.maxsize)
